@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black; 
+}
+
+h1 {
+	color: black;
+}
+
+img {
+
+}
+
+.nav {
+	background-color: white;
+	height: 2em;
+}
+
+.search {
+
+}
+
+.input-field {
+
+}
+
+.search-btn {
+
+}
+
+.character-image {
+
+}
+
+.comics-grid {
+
+}
+
+.col-1-4 {
+
+}
