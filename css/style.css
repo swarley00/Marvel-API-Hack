@@ -80,6 +80,7 @@ h1 {
 }
 
 .character-image {
+	display: none;
 	background-color: #f0141e;
 	height: 400px;
 }
@@ -95,6 +96,10 @@ h1 {
 	font-size: 3em;
 	float: right;
 	padding: 3.3em 2em;
+}
+
+.comic-copy {
+	display: none;
 }
 
 .comic-copy h1 {
