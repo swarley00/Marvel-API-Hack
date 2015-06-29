@@ -1,44 +1,124 @@
 * {
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
 	background-color: black; 
 }
 
-h1 {
+p {
 	color: black;
-}
-
-img {
-
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	margin-top: .5em;
 }
 
 .nav {
 	background-color: white;
-	height: 2em;
+	height: 6em;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+h1 {
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.container {
+	margin: 0 auto;
+	width: 65%;
 }
 
 .search {
-
+	margin: 0 auto;
+	padding: 2em 0;
+	overflow: hidden;
 }
 
 .input-field {
+	width: 80%;
+	height: 3em;
+	padding: 1em;
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	font-weight: 300;
+	color: black;
+	float: left;
+}
 
+.input-field:focus {
+	outline: none;
 }
 
 .search-btn {
+	width: 20%;
+	height: 2em;
+	background-color: #f0141e;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+	font-weight: 400;
+	text-transform: uppercase;
+	border: 2px solid white; 
+	float: right;
+	cursor: pointer;
+	outline: none;
+}
 
+.search-btn:hover {
+	color: #f0141e;
+	background-color: white;
 }
 
 .character-image {
-
+	background-color: #f0141e;
+	height: 400px;
 }
 
-.comics-grid {
-
+.character-image img {
+	height: 400px;
+	width: 400px;
+	float: left;
 }
 
-.col-1-4 {
+.character-image h1 {
+	color: white;
+	font-size: 3em;
+	float: right;
+	padding: 3.3em 2em;
+}
 
+.comic-copy h1 {
+	color: white;
+	margin-top: 1em;
+}
+
+.comic-copy p {
+	color: white;
+	font-weight: 400;
+	margin-bottom: 2em;
+}
+
+.comic {
+	padding-right: 1em;
+	display: inline-block;
+}
+
+.comic:nth-child(4n+4) {
+	padding-right: 0;
+}
+
+.comic p {
+	color: white;
+	font-weight: 400;
+	margin-bottom: 1.5em;
 }
