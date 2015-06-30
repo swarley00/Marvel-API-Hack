@@ -98,6 +98,10 @@ h1 {
 	padding: 3.3em 2em;
 }
 
+.comic-container {
+	display: none;
+}
+
 .comic-copy {
 	display: none;
 }

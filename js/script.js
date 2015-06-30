@@ -12,6 +12,7 @@ $(function () {
 			name: inputName
 		})
 		.done(function (data) {
+			//console.log(data);
 			var image = data.data.results[0].thumbnail;
 			var characterName = data.data.results[0].name;
 			var characterID = data.data.results[0].id;
@@ -26,11 +27,24 @@ $(function () {
 		var characterId = characterID;
 		var comicsAPI = 'https://gateway.marvel.com/v1/public/characters/' + characterId + 'comics';
 		$.getJSON(comicsAPI, {
+			//dateDescriptor: 'thisMonth',
 			apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
 		})
 		.done(function (data) {
+			var characterName = data.data.results[0].name;
+			var comics = data.data.results[0].comics.items.length;
 			console.log(data);
+			$('.comic-copy').show();
+			$('.comic-container').show();
+			$('.comic-description').text("Here are the most recent comic book titles " + characterName + " appears in.");
+			for (var i=0; i < comics; i++) {
+				var comicTitle = data.data.results[0].comics.items[i].name;
+				console.log(comicTitle);
+				$('.comic').append("<p>" + comicTitle + "</p>");
+				// $('.comic-title').text(comicTitle);
+			}
 		});
 	}
 });
 
+//data.data.
