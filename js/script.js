@@ -3,7 +3,6 @@ $(function () {
 	$('.search-btn').click(function (event) {
 		var myInput = $('.input-field').val();
 		getCharacters(myInput);
-		getComics();
 	});
 
 	function getCharacters (inputName) {
@@ -19,22 +18,19 @@ $(function () {
 			$('.character-image').show();
 			$('.character-profile').attr("src", image.path + "." + image.extension);
 			$('.character-name').text(characterName);
+			getComics(characterID);
 		});
 	}
 
-	function getComics () {
-		var characterID = ;
-		var comicsAPI = 'https://gateway.marvel.com/v1/public/characters/' + characterID + 'comics';
+	function getComics (characterID) {
+		var characterId = characterID;
+		var comicsAPI = 'https://gateway.marvel.com/v1/public/characters/' + characterId + 'comics';
 		$.getJSON(comicsAPI, {
-			apikey: '8f39c130c033ff3886d62c54d7a4ecb2',
+			apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
 		})
 		.done(function (data) {
 			console.log(data);
 		});
 	}
 });
-
-//data.data.results[0].id
-//var comicsAPI = 'https://gateway.marvel.com/v1/public/characters/1009664/comics';
-//How do I get the Character ID from one API call and use it in another API call?
 
