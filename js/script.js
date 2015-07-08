@@ -38,8 +38,7 @@ $(function () {
 			for (var i=0; i < comics; i++) {
 				var image = data.data.results[i].thumbnail;
 				var comicTitle = data.data.results[i].title;
-				$('.comic').append("<img src='" + image.path + "." + image.extension + "' alt='Comic Image' height='324px' width='216px'>");
-				$('.comic').append("<p>" + comicTitle + "</p>");
+				$('.comic-container').append("<div class='comic'><img src='" + image.path + "." + image.extension + "' alt='Comic Image' height='324px' width='216px'><p>" + comicTitle + "</p></div>");
 			}
 		});
 	}

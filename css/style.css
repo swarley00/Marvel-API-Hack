@@ -118,8 +118,9 @@ h1 {
 }
 
 .comic {
-	padding-right: 1em;
+	/*padding-right: 1em;*/
 	display: inline-block;
+	width: 25%;
 }
 
 .comic:nth-child(4n+4) {
