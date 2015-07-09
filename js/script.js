@@ -13,32 +13,32 @@ $(function () {
 		}
 	});
 
+	// $('.input-field').autocomplete({
+	// 	source: function (request, response) {
+	// 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
+	// 		$.getJSON(characterAPI, {
+	// 			limit: 20,
+	// 			apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
+	// 		})
+	// 		.done(function (data) {
+	// 			var characterList = data.data.results.length;
+	// 			for (var i = 0; i < characterList; i++) {
+	// 				response(data.data.results[i].name);
+	// 				console.log(data.data.results[i].name);
+	// 			}
+	// 		});
+	// 	}
+	// });
+
 	$('.input-field').autocomplete({
 		source: function (request, response) {
-			var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
-			$.getJSON(characterAPI, {
-				limit: 20,
-				apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
-			})
-			.done(function (data) {
-				var characterList = data.data.results.length;
-				for (var i = 0; i < characterList; i++) {
-					response(data.data.results[i].name);
-					console.log(data.data.results[i].name);
-				}
+			var characterlist = 'js/characterList.json';
+			$.getJSON(characterlist, function (data) {
+				repsonse(data);
+				console.log(data);
 			});
 		}
 	});
-	
-	// var availableCharacters = [
-	// 	"A.I.M.",
-	// 	"Aaron Stack",
-	// 	"Absorbing Man"
-	// ];
-
-	// $('.input-field').autocomplete({
-	// 	source: availableCharacters
-	// });
 
 	function getCharacters (inputName) {
 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
@@ -56,6 +56,9 @@ $(function () {
 			$('.character-name').text(characterName);
 			getComics(characterID, characterName);
 		});
+		// .fail(function () {
+		// 	console.log("NOPE!");
+		// });
 	}
 
 	function getComics (characterID, characterName) {
@@ -67,7 +70,7 @@ $(function () {
 		.done(function (data) {
 			var characterNAME = characterName;
 			var comics = data.data.results.length;
-			console.log(data);
+			//console.log(data);
 			$('.comic-copy').show();
 			$('.comic-container').show();
 			$('.comic-description').text("Here are the most recent comic book titles " + characterNAME + " appears in.");
@@ -77,6 +80,8 @@ $(function () {
 				$('.comic-container').append("<div class='comic'><img src='" + image.path + "." + image.extension + "' alt='Comic Image' height='324px' width='216px'><p>" + comicTitle + "</p></div>");
 			}
 		});
+		// .fail(function () {
+		// 	console.log("NOPE!");
+		// });
 	}
-
 });
