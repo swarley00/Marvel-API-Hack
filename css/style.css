@@ -94,8 +94,7 @@ h1 {
 .character-image h1 {
 	color: white;
 	font-size: 3em;
-	float: right;
-	padding: 3.3em 2em;
+	padding: 3.3em 0;
 }
 
 .comic-container {
@@ -130,5 +129,6 @@ h1 {
 .comic p {
 	color: white;
 	font-weight: 400;
+	line-height: 1.4em;
 	margin-bottom: 1.5em;
 }
