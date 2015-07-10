@@ -30,15 +30,27 @@ $(function () {
 	// 	}
 	// });
 
-	$('.input-field').autocomplete({
-		source: function (request, response) {
-			var characterlist = 'js/characterList.json';
-			$.getJSON(characterlist, function (data) {
-				repsonse(data);
-				console.log(data);
+	$.ajax({
+		url: 'js/characterList.json',
+		datatype: 'json',
+		success: function (data) {
+			var character_data = data.characterList;
+			console.log(character_data);
+			$('.input-field').autocomplete({
+				source: character_data
 			});
 		}
 	});
+
+	// $('.input-field').autocomplete({
+	// 	source: function (request, response) {
+	// 		var characterlist = 'js/characterList.json';
+	// 		$.getJSON(characterlist, function (data) {
+	// 			repsonse(data);
+	// 			console.log(data);
+	// 		});
+	// 	}
+	// });
 
 	function getCharacters (inputName) {
 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
