@@ -1,6 +1,6 @@
 {		
 	"characterList":
-	{
+	[
 		"A-Bomb (HAS)",
 		"A.I.M.",
 		"Aaron Stack",
@@ -354,7 +354,7 @@
 		"Echo",
 		"Eddie Brock",
 		"Eddie Lau",
-		"Edward "Ted" Forrester",
+		"Edward 'Ted' Forrester",
 		"Edwin Jarvis",
 		"Ego",
 		"Electro",
@@ -1486,5 +1486,5 @@
 		"Zuras",
 		"Zzzax",
 		"3-D Man"
-	}
+	]
 }

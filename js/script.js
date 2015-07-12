@@ -13,44 +13,16 @@ $(function () {
 		}
 	});
 
-	// $('.input-field').autocomplete({
-	// 	source: function (request, response) {
-	// 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
-	// 		$.getJSON(characterAPI, {
-	// 			limit: 20,
-	// 			apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
-	// 		})
-	// 		.done(function (data) {
-	// 			var characterList = data.data.results.length;
-	// 			for (var i = 0; i < characterList; i++) {
-	// 				response(data.data.results[i].name);
-	// 				console.log(data.data.results[i].name);
-	// 			}
-	// 		});
-	// 	}
-	// });
-
 	$.ajax({
 		url: 'js/characterList.json',
 		datatype: 'json',
 		success: function (data) {
 			var character_data = data.characterList;
-			console.log(character_data);
 			$('.input-field').autocomplete({
 				source: character_data
 			});
 		}
 	});
-
-	// $('.input-field').autocomplete({
-	// 	source: function (request, response) {
-	// 		var characterlist = 'js/characterList.json';
-	// 		$.getJSON(characterlist, function (data) {
-	// 			repsonse(data);
-	// 			console.log(data);
-	// 		});
-	// 	}
-	// });
 
 	function getCharacters (inputName) {
 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
@@ -67,10 +39,10 @@ $(function () {
 			$('.character-profile').attr("src", image.path + "." + image.extension);
 			$('.character-name').text(characterName);
 			getComics(characterID, characterName);
+		})
+		.fail(function () {
+			console.log("NOPE!");
 		});
-		// .fail(function () {
-		// 	console.log("NOPE!");
-		// });
 	}
 
 	function getComics (characterID, characterName) {
@@ -91,9 +63,9 @@ $(function () {
 				var comicTitle = data.data.results[i].title;
 				$('.comic-container').append("<div class='comic'><img src='" + image.path + "." + image.extension + "' alt='Comic Image' height='324px' width='216px'><p>" + comicTitle + "</p></div>");
 			}
+		})
+		.fail(function () {
+			console.log("NOPE!");
 		});
-		// .fail(function () {
-		// 	console.log("NOPE!");
-		// });
 	}
 });
