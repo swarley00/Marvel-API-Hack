@@ -35,13 +35,17 @@ $(function () {
 				var image = data.data.results[0].thumbnail;
 				var characterName = data.data.results[0].name;
 				var characterID = data.data.results[0].id;
-				//console.log(data);
+				console.log(data);
+				$('.error').hide();
 				$('.character-image').show();
 				$('.character-profile').attr("src", image.path + "." + image.extension);
 				$('.character-name').text(characterName);
 				getComics(characterID, characterName);
 			}
 			catch (e) {
+				$('.comic-copy').hide();
+				$('.character-image').hide();
+				$('.comic-container').hide();
 				$('.error').show();
 				console.log("No such character.");
 			}
