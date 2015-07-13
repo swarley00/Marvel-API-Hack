@@ -31,17 +31,20 @@ $(function () {
 			name: inputName
 		})
 		.done(function (data) {
-			var image = data.data.results[0].thumbnail;
-			var characterName = data.data.results[0].name;
-			var characterID = data.data.results[0].id;
-			//console.log(data);
-			$('.character-image').show();
-			$('.character-profile').attr("src", image.path + "." + image.extension);
-			$('.character-name').text(characterName);
-			getComics(characterID, characterName);
-		})
-		.fail(function () {
-			console.log("NOPE!");
+			try {
+				var image = data.data.results[0].thumbnail;
+				var characterName = data.data.results[0].name;
+				var characterID = data.data.results[0].id;
+				//console.log(data);
+				$('.character-image').show();
+				$('.character-profile').attr("src", image.path + "." + image.extension);
+				$('.character-name').text(characterName);
+				getComics(characterID, characterName);
+			}
+			catch (e) {
+				$('.error').show();
+				console.log("No such character.");
+			}
 		});
 	}
 
@@ -58,14 +61,12 @@ $(function () {
 			$('.comic-copy').show();
 			$('.comic-container').show();
 			$('.comic-description').text("Here are the most recent comic book titles " + characterNAME + " appears in.");
+			$('.comic-container').empty();
 			for (var i=0; i < comics; i++) {
 				var image = data.data.results[i].thumbnail;
 				var comicTitle = data.data.results[i].title;
 				$('.comic-container').append("<div class='comic'><img src='" + image.path + "." + image.extension + "' alt='Comic Image' height='324px' width='216px'><p>" + comicTitle + "</p></div>");
 			}
-		})
-		.fail(function () {
-			console.log("NOPE!");
 		});
 	}
 });
