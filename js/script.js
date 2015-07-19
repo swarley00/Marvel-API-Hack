@@ -57,7 +57,8 @@ $(function () {
 		var characterId = characterID;
 		var comicsAPI = 'https://gateway.marvel.com/v1/public/characters/' + characterId + '/comics';
 		$.getJSON(comicsAPI, {
-			apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
+			//apikey: '8f39c130c033ff3886d62c54d7a4ecb2'
+			apikey: '84a4e918f309995663d4803851be8734'
 		})
 		.done(function (data) {
 			var characterNAME = characterName;
