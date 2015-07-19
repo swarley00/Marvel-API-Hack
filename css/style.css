@@ -139,7 +139,6 @@ h1 {
 
 .error {
 	display: none;
-	width: 42%;
 	margin: 0 auto;
 }
 
@@ -155,4 +154,6 @@ h1 {
 	line-height: 1.4em;
 	text-align: center;
 	margin-top: 2em;
+	margin-left: 12em;
+	margin-right: 12em;
 }
