@@ -27,7 +27,8 @@ $(function () {
 	function getCharacters (inputName) {
 		var characterAPI = 'https://gateway.marvel.com/v1/public/characters';
 		$.getJSON(characterAPI, {
-			apikey: '8f39c130c033ff3886d62c54d7a4ecb2',
+			//apikey: '8f39c130c033ff3886d62c54d7a4ecb2',
+			apikey: '84a4e918f309995663d4803851be8734',
 			name: inputName
 		})
 		.done(function (data) {
